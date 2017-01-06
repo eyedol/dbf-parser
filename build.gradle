@@ -1,0 +1,25 @@
+group = 'dbf.parser'
+description = """ DBF Parser """
+version = '1.0.0'
+
+repositories {
+  jcenter()
+}
+
+allprojects {
+  repositories {
+    jcenter()
+    mavenCentral()
+  }
+
+  buildscript {
+    repositories {
+      jcenter()
+    }
+  }
+}
+
+task wrapper(type: Wrapper) {
+  description 'Creates the gradle wrapper.'
+  gradleVersion '3.1'
+}

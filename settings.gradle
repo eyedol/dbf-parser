@@ -1,0 +1,4 @@
+rootProject.name = 'dbf-parser'
+include ':jdbf'
+include ':dbf-parser'
+include ':sample'

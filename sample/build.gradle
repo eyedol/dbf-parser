@@ -1,0 +1,26 @@
+apply plugin: 'java'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+sourceSets {
+  samples {
+    compileClasspath = sourceSets.main.output + sourceSets.main.runtimeClasspath
+  }
+}
+
+dependencies {
+  compile project(':jdbf')
+}
+
+def runSample(name, mainClass) {
+  task(name, dependsOn: ['compileJava', 'compileSamplesJava']) << {
+    javaexec {
+      //standardInput = System.in
+      main = 'jdbf.parser.sample.' + mainClass
+      classpath = sourceSets.main.runtimeClasspath + sourceSets.samples.output
+    }
+  }
+}
+
+runSample('runSample', 'StockDbfParser')
