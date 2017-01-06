@@ -20,4 +20,4 @@ $ cd dbf-parser
 $ ./gradlew runSample
 ```
 
-Credits: Make use of the [jdbf](https://github.com/iryndin/jdbf) library
+Credits: Makes use of the [jdbf](https://github.com/iryndin/jdbf) library
